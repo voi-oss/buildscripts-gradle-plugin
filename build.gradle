@@ -1,0 +1,25 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'com.vanniktech.maven.publish' version '0.12.0'
+}
+
+gradlePlugin {
+    plugins {
+        voiBuilScriptsPlugin {
+            id = "$project.GROUP.$project.POM_ARTIFACT_ID"
+            implementationClass = 'buildscripts.VoiBuildScriptsPlugin'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+}
