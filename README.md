@@ -112,11 +112,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.voiapp.android.commons:buildscripts:0.8.7'
+        classpath 'io.voiapp.android:buildscripts:0.8.7'
     }
 }
 
-apply plugin: 'io.voiapp.android.commons.buildscripts'
+apply plugin: 'io.voiapp.android.buildscripts'
 ```
 
 ## License
