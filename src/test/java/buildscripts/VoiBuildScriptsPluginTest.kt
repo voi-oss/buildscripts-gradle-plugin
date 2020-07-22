@@ -13,7 +13,7 @@ class VoiBuildScriptsPluginTest {
     @Before
     fun setUp() {
         project = ProjectBuilder.builder().build()
-        project.pluginManager.apply("io.voiapp.android.commons.buildscripts")
+        project.pluginManager.apply("io.voiapp.android.buildscripts")
     }
     @Test
     fun `generateReleaseNotes - plugin creates generateReleaseNotes task`() {

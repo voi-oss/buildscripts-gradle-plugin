@@ -112,7 +112,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.voiapp.android:buildscripts:0.8.7'
+        classpath 'io.voiapp.android:buildscripts:0.8.8'
     }
 }
 
