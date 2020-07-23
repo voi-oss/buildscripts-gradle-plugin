@@ -63,13 +63,9 @@ class JarScriptRunner(
 
     private fun readOutputThread(inputStream: InputStream) =
         thread {
-            val reader = inputStream.bufferedReader(Charsets.UTF_8)
-            var line: String? = reader.readLine()
-            while (line != null) {
-                logger.info(line)
-                line = reader.readLine()
-            }
-            reader.close()
+            inputStream
+                .bufferedReader(Charsets.UTF_8)
+                .useLines { lines -> lines.forEach { logger.info(it) } }
         }
 
     private fun copyScript(dir: File, scriptName: String) = File(dir, scriptName)
