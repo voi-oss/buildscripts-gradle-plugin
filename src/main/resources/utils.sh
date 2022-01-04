@@ -3,7 +3,7 @@
 # Reads base directory referenced by git
 getBaseDir() {
   baseDir=$(gitDir=$(git rev-parse --git-dir) && cd "$gitDir" && cd .. && pwd)
-  echo "$baseDir"
+  echo "${baseDir:-.}"
 }
 
 # Reads the name of the current git branch
