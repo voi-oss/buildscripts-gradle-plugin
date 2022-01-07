@@ -41,4 +41,4 @@ if [ ! -f "$configFile" ]; then
     exit 1
 fi
 
-./"$fileName" file download --format xml --indentation 4sp --unzip-to app/src/main/res
+./"$fileName" file download --format xml --indentation 4sp --export-empty-as skip --unzip-to app/src/main/res
