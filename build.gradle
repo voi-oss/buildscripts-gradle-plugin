@@ -22,6 +22,11 @@ gradlePlugin {
     }
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 Object getValue(String propertyName, boolean ignoreEmpty = false) {
     if (project.hasProperty(propertyName))
         return project.property(propertyName)
