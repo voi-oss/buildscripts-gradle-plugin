@@ -31,7 +31,12 @@ class VoiBuildScriptsPluginTest {
     }
 
     @Test
-    fun `updateTranslations - plugin creates updateTranslations task`() {
-        assertNotNull(project.tasks.findByName("updateTranslations"))
+    fun `updateTranslations - plugin creates updateTranslationsPhrase task`() {
+        assertNotNull(project.tasks.findByName("updateTranslationsPhrase"))
+    }
+
+    @Test
+    fun `updateTranslations - plugin creates updateTranslationsLokalise task`() {
+        assertNotNull(project.tasks.findByName("updateTranslationsLokalise"))
     }
 }

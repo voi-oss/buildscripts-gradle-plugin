@@ -18,9 +18,15 @@ import org.gradle.api.Project
 class UpdateTranslationsTaskHandler(private val scriptRunner: ScriptRunner) : TaskHandler {
 
     override fun apply(project: Project) {
-        project.task("updateTranslations") {
+        project.task("updateTranslationsPhrase") {
             it.doLast {
-                val script = Script(fileName = "update_translations.sh", dependencies = listOf("utils.sh"))
+                val script = Script(fileName = "update_translations_phrase_v1.17.1.sh", dependencies = listOf("utils.sh"))
+                scriptRunner.run(project.projectDir, script)
+            }
+        }
+        project.task("updateTranslationsLokalise"){
+            it.doLast {
+                val script = Script(fileName = "update_translations_lokalise_v2.sh", dependencies = listOf("utils.sh"))
                 scriptRunner.run(project.projectDir, script)
             }
         }
